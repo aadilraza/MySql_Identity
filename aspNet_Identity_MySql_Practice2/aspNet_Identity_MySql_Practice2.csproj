@@ -74,6 +74,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
@@ -201,16 +202,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="actor.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="actor_info.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="address.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="category.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="city.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="country.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="customer.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="customer_list.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="film.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="film_actor.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="film_category.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="film_list.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="film_text.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="inventory.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="language.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -218,8 +264,44 @@
     <Compile Include="MySqlConfiguration.cs" />
     <Compile Include="MySqlHistoryContext.cs" />
     <Compile Include="MySqlInitializer.cs" />
+    <Compile Include="nicer_but_slower_film_list.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="payment.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rental.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SakilaEntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SakilaEntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SakilaEntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SakilaEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SakilaEntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sales_by_film_category.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="staff.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="staff_list.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="store.cs">
+      <DependentUpon>SakilaEntityModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -228,10 +310,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="SakilaEntityModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SakilaEntityModel.edmx</DependentUpon>
+      <LastGenOutput>SakilaEntityModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SakilaEntityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SakilaEntityModel.edmx</DependentUpon>
+      <LastGenOutput>SakilaEntityModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="SakilaEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SakilaEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="SakilaEntityModel.edmx.diagram">
+      <DependentUpon>SakilaEntityModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -280,6 +379,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -296,6 +396,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
