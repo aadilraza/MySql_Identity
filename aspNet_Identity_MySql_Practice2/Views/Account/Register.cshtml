@@ -1,4 +1,6 @@
-﻿@model aspNet_Identity_MySql_Practice2.Models.RegisterViewModel
+﻿@using aspNet_Identity_MySql_Practice2.Models
+@model aspNet_Identity_MySql_Practice2.Models.RegisterViewModel
+
 @{
     ViewBag.Title = "Register";
 }
@@ -45,7 +47,16 @@
             @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserRole, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
 
+            @Html.DropDownList("UserRole",
+                           new SelectList(Enum.GetValues(typeof(Role))),
+                           "Select Role",
+                           new { @class = "form-control" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

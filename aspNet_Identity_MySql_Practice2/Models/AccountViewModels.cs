@@ -80,21 +80,34 @@ namespace aspNet_Identity_MySql_Practice2.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Age is required")]
+        [Required(ErrorMessage = "Age is Required")]
         [Display(Name = "Age")]  
         public int Age { get; set; }
 
-        [Required(ErrorMessage = "Address is required")]
+        [Required(ErrorMessage = "Address is Required")]
         [Display(Name = "Address")]   
         public string Address { get; set; }
 
-        [Required(ErrorMessage = "Education is required")]
+        [Required(ErrorMessage = "Education is Required")]
         [Display(Name = "Education")]
         public string Education { get; set; }
 
-        [Required(ErrorMessage = "Phone Number is required")]
+        [Required(ErrorMessage = "Phone Number is Required")]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
+
+        [Required(ErrorMessage = "Role is Required")]
+        [Display(Name = "User Role")]
+        public Role UserRole { get; set; }
+    }
+
+    public enum Role
+    {
+        Admin,
+        Manager,
+        User,
+        GuestUser,
+        OpenUser
     }
 
     public class ResetPasswordViewModel
